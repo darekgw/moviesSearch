@@ -10,8 +10,6 @@ class View extends LitElement {
 
   constructor() {
     super();
-    // const showResults = (target, response) => {
-    //   target.innerHTML = JSON.stringify(response, null, 2);}
     this.movies = [];
     this.filteredMovies = [];
     this.chosenMovie = "Ala ma kota";
@@ -22,7 +20,6 @@ class View extends LitElement {
       .then(response => {
         (this.movies = response), (this.filteredMovies = response);
       })
-      // .then(response => this.showResults(response))
       .catch(error => console.log(error));
     console.log(this.movies);
   }
@@ -40,11 +37,6 @@ class View extends LitElement {
     const eventDetail = event.detail.filteredMovies;
     this.filteredMovies = Object.assign([], eventDetail);
   }
-
-  // showResults(response) {
-  //   const moviesTmp = JSON.stringify(response);
-  //   this.movies = JSON.parse(moviesTmp);
-  // }
 
   showMovieTitles() {
     console.log("show Movies");
