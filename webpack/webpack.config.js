@@ -4,20 +4,20 @@ const webpack = require("webpack");
 const plugins = require("./plugins");
 
 module.exports = {
-    entry: ["./src/app.ts"],
+    entry: ["./src/View.ts"],
     module: {
         rules: [loaders.jsLoader]
     },
     output: {
         path: path.resolve(__dirname, "../dist"),
-        filename: "js/[name].bundle.js",
+        filename: "[name].bundle.js",
         publicPath: "/"
     },
     resolve: {
         extensions: [" ", ".js", ".ts"]
     },
     devServer: {
-        contentBase: "./dist",
+        contentBase: path.resolve(__dirname, "../public"),
         port: 3004,
         hot: true
     },

@@ -8,11 +8,22 @@ class View extends LitElement {
   @property({ type: Array }) filteredMovies;
   @property({ type: String }) chosenMovie;
 
+  static get styles() {
+    return css`
+      :host {
+        background-color: white;
+        margin: 10px;
+        padding: 0 10px;
+        border-radius: 5px;
+      }
+    `;
+  }
+
   constructor() {
     super();
     this.movies = [];
     this.filteredMovies = [];
-    this.chosenMovie = "Ala ma kota";
+    this.chosenMovie = "";
   }
 
   getMovieList() {

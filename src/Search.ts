@@ -48,7 +48,6 @@ class Search extends LitElement {
 
   render() {
     return html`
-    <p>${this.movies[1].title}</p>
         <input id="search" type="text" @input="${this.updateUserInput}"></input>
         <p>Chosen movie is ${this.chosenMovie}.</p>
         <p>This user input is: ${this.userInput}</p>

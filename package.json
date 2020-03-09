@@ -2,7 +2,7 @@
   "name": "gib",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/main.bundle.js",
   "scripts": {
     "build": "webpack -p --config ./webpack/webpack.config.js --display-error-details",
     "watch": "webpack-dev-server --open -d --config ./webpack/webpack.config.js --display-error-details"
