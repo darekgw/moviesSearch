@@ -1,9 +1,5 @@
-// wyszukiwarka w js
-
-// description
-// title
-
-// const sh = shows.filter(e => `${e.title} ${e.description}`).includes(ref.to.input.value) dodać tu lowerCase
+// How to filter data for table with JS
+// const filteredMovies = this.movies.filter(e => `${e.title} ${e.description}`.toLowerCase().includes(ref.to.input.value).toLowerCase());
 
 import "@babel/polyfill";
 import { LitElement, html, css, property, TemplateResult } from "lit-element";
@@ -23,7 +19,7 @@ class Search extends LitElement {
   }
 
   filterMovies(userInput) {
-    this.filteredMovies = this.movies.filter(movie =>
+    this.filteredMovies = this.movies.filter((movie) =>
       `${movie.title} ${movie.description}`
         .toLowerCase()
         .includes(userInput.toLowerCase())
@@ -31,10 +27,10 @@ class Search extends LitElement {
     console.log(this.filteredMovies);
     let userFilteredMovies = new CustomEvent("user-input", {
       detail: {
-        filteredMovies: this.filteredMovies
+        filteredMovies: this.filteredMovies,
       },
       bubbles: true,
-      composed: true
+      composed: true,
     });
     this.dispatchEvent(userFilteredMovies);
   }
